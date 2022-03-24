@@ -1,0 +1,6 @@
+{
+
+    "mongoURI": "mongodb+srv://adamya:dummy@cluster0.x3tyi.mongodb.net/Mern?retryWrites=true&w=majority",
+    "jwtSecret" : "mysecrettoken"
+}
+
