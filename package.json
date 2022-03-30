@@ -5,9 +5,13 @@
   "main": "server.js",
   "scripts": {
     "start": "node server",
+<<<<<<< HEAD
     "server":"nodemon server",
     "client":"npm start --prefix client",
     "expertguru":"concurrently \"npm run server\" \"npm run client\""
+=======
+    "server":"nodemon server"
+>>>>>>> 55aa3a8855069b2130b1683dece7c1bf2eaa0bc3
   },
   "repository": {
     "type": "git",

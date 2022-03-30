@@ -1,5 +1,6 @@
 const express = require("express");
 const router = express.Router();
+<<<<<<< HEAD
 const { check, validationResult } = require("express-validator");
 const auth = require("../../middleware/auth");
 const User = require("../../models/User");
@@ -199,5 +200,12 @@ router.delete('/comment/:id/:comment_id',auth,async(req,res) =>{
     res.status(500).send("Server Error");
   }
 });
+=======
+
+//@route  GET api/posts
+//@desc   Test route
+//@access Public
+router.get("/", (req, res) => res.send("posts route"));
+>>>>>>> 55aa3a8855069b2130b1683dece7c1bf2eaa0bc3
 
 module.exports = router;
