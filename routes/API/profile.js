@@ -1,11 +1,7 @@
-<<<<<<< HEAD
 const config = require("config");
 const express = require("express");
 const { check, validationResult } = require("express-validator");
 const request = require("request");
-=======
-const express = require("express");
->>>>>>> 55aa3a8855069b2130b1683dece7c1bf2eaa0bc3
 const router = express.Router();
 const auth = require("../../middleware/auth");
 const Profile = require("../../models/Profile");
@@ -29,7 +25,6 @@ router.get("/me", auth, async (req, res) => {
   }
 });
 
-<<<<<<< HEAD
 //@route  Post api/profile/
 //@desc   Create and update user profile
 //@access Private
@@ -316,6 +311,4 @@ router.get("/github/:username", (req, res) => {
   }
 });
 
-=======
->>>>>>> 55aa3a8855069b2130b1683dece7c1bf2eaa0bc3
 module.exports = router;

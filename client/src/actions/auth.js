@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { REGISTER_FAIL, REGISTER_SUCCESS,LOG_OUT,USER_LOADED,AUTH_ERROR,LOGIN_FAIL,LOGIN_SUCCESS} from './types';
+import { REGISTER_FAIL, REGISTER_SUCCESS,LOG_OUT,USER_LOADED,AUTH_ERROR,LOGIN_FAIL,LOGIN_SUCCESS,CLEAR_PROFILE} from './types';
 import {setAlert} from './alert';
 import setAuthToken from '../utils/setAuthToken';
 
@@ -90,7 +90,7 @@ if(errors){
 
 //LOGOUT /CLEAr profile
 export const logout=()=>dispatch=>{
+    dispatch({type:CLEAR_PROFILE});
     dispatch({type:LOG_OUT});
-
-
+   
 }

@@ -330,13 +330,19 @@ button {
   margin-right: 0.6rem;
 }
 
+
 /* Landing Page */
 .landing {
   position: relative;
   background: url('./img/poster.jpg') no-repeat center center/cover;
   height: 100vh;
 }
-
+.icon-center {
+  text-align:center;
+  width: 500px;
+  display: block;
+  
+  }
 .landing-inner {
   color: #fff;
   height: 100%;

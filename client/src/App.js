@@ -5,7 +5,7 @@ import Navbar from "./Components/layout/Navbar";
 import Login from "./Components/auth/Login";
 import Register from "./Components/auth/Register";
 import Alert from "./Components/layout/Alert";
-import { Landing } from "./Components/layout/Landing";
+import  Landing  from "./Components/layout/Landing";
 import { loadUser } from "./actions/auth";
 import Dashboard from "./Components/dashboard/Dashboard.js";
 import PrivateRoute from "./Components/Routing/PrivateRoute";

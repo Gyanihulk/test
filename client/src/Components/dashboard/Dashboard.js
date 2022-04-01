@@ -1,16 +1,48 @@
-import React, { useEffect } from 'react';
+import React, { Fragment, useEffect } from 'react';
+import PropTypes from 'prop-types';
+import {connect} from 'react-redux';
+import { getCurrentProfile } from '../../actions/profile';
 
+import { Link } from 'react-router-dom'
 
-const Dashboard=()=>{
+const Dashboard=({getCurrentProfile,auth:{user},profile:{profile,loading }}) =>{
+  useEffect(()=>{
+    getCurrentProfile()
+  },[]);
   
-  
-  return(
-    <h1>Dashboard</h1>
+  return loading && profile ===null 
+  ?(<div class="card-body">
+  <div class="padding_5">
+   <div class="icon-center">
+     <i class="fas fa-sync fa-spin fa-2xl" aria-hidden="true" alt ='Loading...'></i>
+   </div>
+  </div>
+ </div> 
   )
+ :(
+  <>
+  <h1 className ="large text-primary">Dashboard</h1>
+  <p className="lead"><i className="fas fa-user"></i> Welcome {user && user.name}</p>
+  {profile!==null ?<div>has</div> 
+  :<>
+  <p>You have not yet setup a profile,please add some info</p>
+  <Link to='/create-profile' className='btn btn-primary my-1'>Create Profile</Link>
+  </>}
+  
+  
+  </>
+ )
+  };
 
-  }
+  Dashboard.propTypes={
+    getCurrentProfile:PropTypes.func.isRequired,
+    auth:PropTypes.object.isRequired,
+    profile:PropTypes.object.isRequired
+  };
 
+const mapStatetoProps=state=>({
+  auth:state.auth,
+  profile:state.profile
+});
 
-
-
-export default Dashboard;
+export default connect(mapStatetoProps,{getCurrentProfile})(Dashboard) ;
