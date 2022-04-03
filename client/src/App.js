@@ -9,13 +9,15 @@ import  Landing  from "./Components/layout/Landing";
 import { loadUser } from "./actions/auth";
 import Dashboard from "./Components/dashboard/Dashboard.js";
 import PrivateRoute from "./Components/Routing/PrivateRoute";
-
+import CreateProfile from "./Components/Profile-forms/Create-profile";
 
 //Redux
 import { Provider } from "react-redux";
 import store from "./store";
 import { LoginFail } from "./Components/auth/loginFail";
-
+import EditProfile from "./Components/Profile-forms/EditProfile";
+import AddExperience from "./Components/Profile-forms/AddExperience";
+import AddEducation from "./Components/Profile-forms/AddEducation";
 const App = () => {
   useEffect(() => {
     store.dispatch(loadUser());
@@ -31,10 +33,14 @@ const App = () => {
 
             <Routes>
               <Route exact path="/" element={<Landing />} />
+              <Route exact path="/edit-profile" element={<PrivateRoute><EditProfile/></PrivateRoute>} />
+              <Route exact path="/add-experience" element={<PrivateRoute><AddExperience/></PrivateRoute>}/>
+              <Route exact path="/add-education" element={<PrivateRoute><AddEducation/></PrivateRoute>}/>
               <Route exact path="/register" element={<Register />} />
               <Route exact path="/login" element={<Login />} />
               <Route exact path="/loginFail" element={<LoginFail />} />
               <Route exact path="/dashboard" element={<PrivateRoute ><Dashboard/></PrivateRoute>} />
+              <Route exact path="/create-profile" element={<PrivateRoute><CreateProfile/></PrivateRoute>}/>
             </Routes>
           </div>
         </Fragment>
