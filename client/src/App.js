@@ -10,6 +10,7 @@ import { loadUser } from "./actions/auth";
 import Dashboard from "./Components/dashboard/Dashboard.js";
 import PrivateRoute from "./Components/Routing/PrivateRoute";
 import CreateProfile from "./Components/Profile-forms/Create-profile";
+import Profiles from "./Components/Profile/Profiles";
 
 //Redux
 import { Provider } from "react-redux";
@@ -33,6 +34,7 @@ const App = () => {
 
             <Routes>
               <Route exact path="/" element={<Landing />} />
+              <Route exact path="/profiles" element={<Profiles />} />
               <Route exact path="/edit-profile" element={<PrivateRoute><EditProfile/></PrivateRoute>} />
               <Route exact path="/add-experience" element={<PrivateRoute><AddExperience/></PrivateRoute>}/>
               <Route exact path="/add-education" element={<PrivateRoute><AddEducation/></PrivateRoute>}/>
