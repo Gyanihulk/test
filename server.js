@@ -21,7 +21,7 @@ if(process.env.NODE_ENV==='production'){
     //set static folder
     app.unsubscribe(express.static('client/build'));
     app.get('*',(req,res) => {
-    res.sendFile(path.resolve(__diename,'client','build','index.html');)
+    res.sendFile(path.resolve(__diename,'client','build','index.html'));
     });
 }
 const PORT = process.env.PORT || 5000;
