@@ -8,7 +8,8 @@ const Profileitem = ({
         status,company,location,skills
     }
 }) => {
-  return <div classNAme="profile bg-light">
+  return(<>
+   <div classNAme="profile bg-light">
       <img src={avatar} alt="" className="round-img"/>
       <div>
       <h2> {name}</h2> 
@@ -22,8 +23,9 @@ const Profileitem = ({
       </ul>
      
     </div>
+    </>
  
-    
+  )
 }
 
 Profileitem.propTypes = {}

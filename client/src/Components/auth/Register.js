@@ -48,7 +48,7 @@ const Register = ({ setAlert ,register,isAuthenticated}) => {
   };
      //Redirect is logged in 
      if (isAuthenticated){
-      return <Link to ='/dashboard'/>;
+      return <Navigate to ='/dashboard'/>;
       //<Redirect to ='/dashboard'/>
     }
 
