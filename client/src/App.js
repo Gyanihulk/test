@@ -21,6 +21,7 @@ import AddExperience from "./Components/Profile-forms/AddExperience";
 import AddEducation from "./Components/Profile-forms/AddEducation";
 import Profile from "./Components/Profile/Profile";
 import Messenger from "./Components/mesenger/Messenger";
+import Homepage from "./Components/layout/Homepage";
 const App = () => {
   useEffect(() => {
     store.dispatch(loadUser());
@@ -35,7 +36,7 @@ const App = () => {
             <Alert />
 
             <Routes>
-              <Route exact path="/" element={<Landing />} />
+              <Route exact path="/" element={<Homepage/>} />
               <Route exact path="/profiles" element={<Profiles />} />
               <Route path="/profile/:id" element={<Profile />} />
               <Route exact path="/edit-profile" element={<PrivateRoute><EditProfile/></PrivateRoute>} />
